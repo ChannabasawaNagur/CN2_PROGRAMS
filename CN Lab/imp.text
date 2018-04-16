@@ -1,0 +1,2 @@
+1. fgets(buffer, sizeof(buffer), stdin/file_pointer) - Just get from a file
+2. write(write_d, buffer, sizeof(buffer)) - write/read in pipe
