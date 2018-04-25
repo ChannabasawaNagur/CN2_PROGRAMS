@@ -14,22 +14,22 @@ char buffer[1000];
 int main()
 {
   int readfd,writefd,n,fd;
-  printf("waiting for connection....\n" );
+  printf("waiting for connection...." );
   if((mkfifo(FIFO1,PERMS))<0)
   {
-    printf("cannot make file...\n");
+    printf("cannot make file...");
     exit(0);
   }
   if((mkfifo(FIFO2,PERMS))<0)
   {
-    printf("cannot make file 2....\n" );
+    printf("cannot make file 2...." );
     exit(0);
   }
   readfd=open(FIFO1,O_RDONLY,0);
   writefd=open(FIFO2,O_WRONLY,0);
-  printf("connection established...\n");
+  printf("connection established...");
   read(readfd,fname,255);
-  printf("Clinent has requested...%s\n",fname );
+  printf("Clinent has requested...%s",fname );
   fd=open(fname,O_RDONLY);
   if(fd<0)
   {

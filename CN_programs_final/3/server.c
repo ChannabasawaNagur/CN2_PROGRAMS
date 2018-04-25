@@ -30,7 +30,7 @@ int main()
     return 0;
   }
   else
-    printf("i/p msg queue opened...\n");
+    printf("i/p msg queue opened...");
   if((msgqid2=msgget(key2,0666 | IPC_CREAT))<0){
     printf("cant open o/p msg queue...\n");
     return 0;
