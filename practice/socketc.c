@@ -3,7 +3,9 @@
 #include<sys/types.h>
 #include<fcntl.h>
 #include<sys/socket.h>
+#include<unistd.h>
 #include<sys/stat.h>
+#include<arpa/inet.h>
 #include<netinet/in.h>
 
 int main(int argc,char *argv[])
@@ -20,7 +22,7 @@ int main(int argc,char *argv[])
   address.sin_family=AF_INET;
   address.sin_port=htons(15000);
   inet_pton(AF_INET,argv[1],&address.sin_addr);
-  if(connet(create_socket,(struct sockaddr*) &address,sizeof(address))==0)
+  if(connect(create_socket,(struct sockaddr*) &address,sizeof(address))==0)
   {
     printf("the connection was established...\n");
   }
@@ -28,7 +30,7 @@ int main(int argc,char *argv[])
   scanf("%s",fname);
   send(create_socket,fname,sizeof(fname),0);
   printf("request accepted....\n");
-  while((cont=recv(create_socket,buffer,bufsize))>0)
+  while((cont=recv(create_socket,buffer,bufsize,0))>0)
   {
     write(1,buffer,cont);
   }

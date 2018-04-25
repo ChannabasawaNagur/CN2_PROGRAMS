@@ -35,7 +35,6 @@ int main()
 	}
 	else
 	printf("CLIENT: msgqueue2 opened succesfully\n");
-++
 	buf.msgtype=1;
 	printf("enter the filename to be fetched\n");
 	scanf("%s",buf.msgtxt);

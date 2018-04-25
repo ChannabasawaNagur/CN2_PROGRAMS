@@ -30,7 +30,7 @@ int main()
     {
         scanf("%d",&dm[i][j]);
            rt[i].dist[j]=dm[i][j];
-           rt[i].from[j]=i;
+           rt[i].from[j]=j;
     }
 
   for(i=0;i<n;i++)
@@ -75,4 +75,3 @@ int main()
   printf("\nDistance=%d",rt[i-1].dist[j-1]);
   return 0;
 }
-
